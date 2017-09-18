@@ -1,0 +1,9 @@
+./configure
+make
+make install
+
+g++ -rdynamic /usr/local/lib/libjrtp.so.2.9 -o sample1 sample1.cpp
+g++ -L/usr/local/lib -ljrtp -o sample1 sample1.cpp
+export LD_LIBRARY_PATH=/usr/local/lib
+
+./sample1
